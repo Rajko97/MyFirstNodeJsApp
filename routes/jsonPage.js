@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   fetchData.execute(data => {
     filterData.execute(data, true, (filtered) => {
       res.set({ 'content-type': 'application/json; charset=utf-8' });
-      res.send(filtered);
+      res.send(filtered.data);
     });
   });
 });

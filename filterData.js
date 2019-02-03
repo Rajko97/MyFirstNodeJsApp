@@ -3,12 +3,11 @@
 function filterData(data, trendingOnly, callback) {
     let filtered = [];
   
-    //parse and fatch data
-    let obj = JSON.parse(data);
-    if(!obj.hasOwnProperty('data')) {
-      return callback('Problem with parsing data');
+    //parse and fetch data
+    if(!data.hasOwnProperty('data')) {
+      return callback({status:401, message: 'Problem with parsing data'});
     }
-    let objData = obj['data'];
+    let objData = data['data'];
   
     //loop throw all posts
     for (let i = 0; i < objData.length; i++) {
@@ -44,7 +43,7 @@ function filterData(data, trendingOnly, callback) {
         console.log('Post ${i} could not be parsed: '+err);
       }
     }
-    callback(JSON.stringify(filtered));
+    callback({status:200, message:'success', data:filtered});
 }
 
 module.exports.execute = filterData;

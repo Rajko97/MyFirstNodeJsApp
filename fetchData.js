@@ -8,7 +8,7 @@ const execute = (callback) => {
             console.log("Error sending request: "+err.message);
             return callback(err);
         }
-        return callback(JSON.stringify(body));
+        return callback(body);
     });
 }
 

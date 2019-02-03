@@ -7,13 +7,11 @@ const filterData = require('./../filterData');
 router.get('/', function(req, res, next) {
   fetchData.execute((data) => {
     filterData.execute(data, false, (filteredData) => {
-      try {
-        let json = JSON.parse(filteredData);
-        res.render('index', {title:'SomeTitle', data:json});
+      if(filteredData.status == 200) {
+        res.render('index', {title:'SomeTitle', data:filteredData.data});
       }
-      catch (error) {
+      else {
         res.render('error', {message: "We could not find Data to show you"});
-        console.log('Error parsing data: '+error);
       }
     });
   });
