@@ -6,7 +6,7 @@ function filterData(data, trendingOnly, callback) {
     //parse and fatch data
     let obj = JSON.parse(data);
     if(!obj.hasOwnProperty('data')) {
-      callback('Problem with parsing data');
+      return callback('Problem with parsing data');
     }
     let objData = obj['data'];
   

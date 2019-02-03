@@ -12,6 +12,6 @@ block content
           span(class="desc")=value['shortDescription']
           -let date = new Date(value['createdAt'])
           -let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-          -let formated = months[date.getMonth()]+' '+date.getDay()+', '+date.getYear()
+          -let formated = months[date.getMonth()]+' '+date.getDay()+', '+date.getFullYear()
           p(class="date")=formated
 
