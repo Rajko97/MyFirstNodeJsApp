@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-const fatchData = require('./../fatchData');
+const fetchData = require('./../fetchData');
 const filterData = require('./../filterData');
 
 router.get('/', function(req, res, next) {
-  fatchData.execute(data => {
+  fetchData.execute(data => {
     filterData.execute(data, true, (filtered) => {
       res.set({ 'content-type': 'application/json; charset=utf-8' });
       res.send(filtered);
