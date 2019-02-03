@@ -1,8 +1,44 @@
 body {
-  padding: 50px;
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background:#00FFBC;
+  color:white;
 }
 
-a {
-  color: #00B7FF;
+.post {
+  background: #8EA5FF;
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 15px;
+  width: 100%;
+}
+
+img {
+  border: 1px solid rgb(0, 255, 158);
+  border-radius: 10px;
+  width: 180px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.infos {
+  padding-left: 12px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.desc {
+  font-weight: bold;
+}
+
+.date {
+  text-align: right;
 }

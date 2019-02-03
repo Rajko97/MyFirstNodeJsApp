@@ -1,9 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+const fatchData = require('./../fatchData');
+const filterData = require('./../filterData');
+
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  fatchData.execute((data) => {
+    filterData.execute(data, false, (filteredData) => {
+      let json = JSON.parse(filteredData);
+      res.render('index', {title:'SomeTitle', data:json});
+    });
+  });
 });
 
 module.exports = router;

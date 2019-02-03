@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  each value in data
+    table(class="post")
+      tr
+        td
+          img(src=value['image'])
+        td(class="infos")
+          span(class="title")=value['title']
+          br
+          span(class="desc")=value['shortDescription']
+          -let date = new Date(value['createdAt'])
+          -let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+          -let formated = months[date.getMonth()]+' '+date.getDay()+', '+date.getYear()
+          p(class="date")=formated
+
