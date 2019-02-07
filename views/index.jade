@@ -2,16 +2,15 @@ extends layout
 
 block content
   each value in data
-    table(class="post")
-      tr
-        td
-          img(src=value['image'])
-        td(class="infos")
-          span(class="title")=value['title']
-          br
-          span(class="desc")=value['shortDescription']
-          -let date = new Date(value['createdAt'])
-          -let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-          -let formated = months[date.getMonth()]+' '+date.getDay()+', '+date.getFullYear()
-          p(class="date")=formated
+    div(class="post")
+      div
+        img(src=value['image'])
+      div(class="infos")
+        span(class="title")=value['title']
+        br
+        span(class="desc")=value['shortDescription']
+        -let date = new Date(value['createdAt'])
+        -let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        -let formated = months[date.getMonth()]+' '+date.getDay()+', '+date.getFullYear()
+        p(class="date")=formated
 
